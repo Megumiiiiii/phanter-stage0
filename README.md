@@ -41,4 +41,50 @@ sudo apt-get update && sudo apt install jq git && sudo apt install apt-transport
 ### Atur keperluan
 
 ```yml
-git
+git clone https://github.com/Megumiiiiii/phanter-stage0.git
+cd ~/phanter-stage0
+```
+
+#### Edit .env
+
+```yml
+cp .env.sample .env
+```
+
+
+```yml
+nano .env
+```
+
+- isi yang kosong, `RPC_URL` isi dengan HTTPS Polygon Mumbai dari Alchemy -> [Alchemy](https://dashboard.alchemy.com/)
+- ![alchemy](https://github.com/Megumiiiiii/phanter-stage0/assets/98658943/87f66461-5f75-45b0-b6d9-c5eed4914829)
+- `PRIVATE_KEY` isi dengan privkey dari Metamask **WALLET BARU** atau **WALLET TESTNET**, dan ambil faucet Matic testnet -> [DISINI](https://mumbaifaucet.com/)
+- ![Aenv](https://github.com/Megumiiiiii/phanter-stage0/assets/98658943/d7efb5d3-2e3b-467e-a986-3b46ddc4a888)
+
+## RUN!!!
+
+```yml
+docker run -d \
+--name panther \
+--env-file .env \
+pantherprotocol/miner-client
+```
+
+### Cek logs
+
+```yml
+docker logs -f panther
+```
+
+### ⚠️ Jika ingin menghapus node ⚠️
+
+```yml
+docker stop panther; docker rm panther
+docker rmi pantherprotocol/miner-client
+```
+
+#
+
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzNmZTIxZmE3ZmY3MzRiMDcwNDJhYTQ5ZmNlY2YxMWE1OWIyYmVkNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/mVBlqOD4ra9jQiI3cC/giphy.gif" height="125" width="420"/>
+</div>
