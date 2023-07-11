@@ -61,7 +61,15 @@ nano .env
 - `PRIVATE_KEY` isi dengan privkey dari Metamask **WALLET BARU** atau **WALLET TESTNET**, dan ambil faucet Matic testnet -> [DISINI](https://mumbaifaucet.com/)
 - ![Aenv](https://github.com/Megumiiiiii/phanter-stage0/assets/98658943/d7efb5d3-2e3b-467e-a986-3b46ddc4a888)
 
-## RUN!!!
+### Memulai Node
+
+#### Pull
+
+```yml
+docker pull pantherprotocol/miner-client
+```
+
+## RUN !1!1!1
 
 ```yml
 docker run -d \
