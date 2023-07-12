@@ -73,6 +73,8 @@ docker pull pantherprotocol/miner-client
 
 ```yml
 docker run -d \
+--restart always \
+--pull always \
 --name panther \
 --env-file .env \
 pantherprotocol/miner-client
